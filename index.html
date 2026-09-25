@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SSŠF | Evidencia aktivity študentov</title>
-  <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
+  <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.14.2/js/msal-browser.min.js"></script>
+<script type="text/javascript">
+  if (typeof window.msal === "undefined") {
+    document.write('<script type="text/javascript" src="https://alcdn.msftauth.net/browser/2.14.2/js/msal-browser.min.js"><\/script>');
+  }
+</script>
   <style>
     :root { --navy:#17324d; --blue:#1976a7; --turquoise:#20a8a2; --green:#4f9d69; --green-soft:#ddf3df; --green-strong:#72bf7d; --ink:#142433; --muted:#607080; --line:#dfe8ee; --bg:#f4f8fa; --white:#fff; --danger:#b23c45; }
     * { box-sizing:border-box; } body { margin:0; font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
