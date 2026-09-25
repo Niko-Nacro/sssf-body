@@ -59,7 +59,7 @@
   let app, account, token, workbookRoot, events = [], selectedYear = "2026/2027";
   const $ = id => document.getElementById(id);
   const state = { config: readConfig(), connected:false };
-  function readConfig(){ const saved = JSON.parse(localStorage.getItem("sssfBodyConfig") || "{}"); return {...DEPLOYMENT_CONFIG,...saved}; }
+  function readConfig(){ const saved = JSON.parse(localStorage.getItem("sssfBodyConfig") || "{}"); return staticConfigComplete() ? {...saved,...DEPLOYMENT_CONFIG} : {...DEPLOYMENT_CONFIG,...saved}; }
   function staticConfigComplete(){ return DEPLOYMENT_CONFIG.clientId && DEPLOYMENT_CONFIG.workbookSharingUrl; }
   function setStatus(message, isError=false){ const el=$("status");el.textContent=message;el.className="status"+(isError?" error":""); }
   function uuid(){ return crypto.randomUUID ? crypto.randomUUID() : "id-"+Date.now()+"-"+Math.random().toString(16).slice(2); }
